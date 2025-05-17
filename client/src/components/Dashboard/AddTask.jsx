@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import axios from 'axios';
 const AddTask = ({setAddTaskDiv}) => {
-  const apiUrl = process.env.REACT_APP_SERVER_URL;
 const[Values,setValues]=useState({title:"",description:"",priority:"Low", status:"YetToStart"});
 
 
@@ -13,7 +12,7 @@ const change=(e)=>{
 const addTask = async (e)=>{
   e.preventDefault();
   try{
-const res = await axios.post(`${apiUrl}/api/v1/addTask`,Values,{
+const res = await axios.post("http://localhost:1000/api/v1/addTask",Values,{
   
   withCredentials:true
 })

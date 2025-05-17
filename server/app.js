@@ -11,15 +11,15 @@ const taskApis=require("./controllers/task");
 const authMiddleware=require("./middleware/authMiddleware")
 app.use(express.json());
 app.use(cors({
-    origin:["http://localhost:5173","http://localhost:5174","https://task-flow-full-stack-project.netlify.app"],
+    origin:["http://localhost:5173","http://localhost:5174","https://task-flow-full-stack-project.netlify"],
     credentials:true,
 }));
 app.use(cookieParser());
 
-app.get("/",(req,res)=>{
-    res.send("hello from backend");
+// app.get("/",(req,res)=>{
+//     res.send("hello from backend");
 
-});
+// });
 app.use("/api/v1",userApis);
 app.use("/api/v1",authMiddleware); 
 app.use("/api/v1",taskApis);

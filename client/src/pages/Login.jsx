@@ -2,7 +2,6 @@ import React from 'react'
 import {Link,BrowserRouter as Router, Route, Routes,useNavigate} from "react-router-dom";
 import { useState } from 'react';
 import axios from "axios";
-const apiUrl = process.env.REACT_APP_SERVER_URL;
 
 const Login = () => {
   const navigate=useNavigate();
@@ -23,7 +22,7 @@ const Login = () => {
       e.preventDefault();
   
       try{
-const res= await axios.post(`${apiUrl}/api/v1/login`,Values,{
+const res= await axios.post("http://localhost:1000/api/v1/login",Values,{
 withCredentials:true
 }
   );

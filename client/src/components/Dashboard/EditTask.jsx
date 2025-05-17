@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 const EditTask = ({setEditTaskDiv,EditTaskId}) => {
     const[Values,setValues]=useState({title:"",description:"",priority:"Low", status:"YetToStart"});
-    const apiUrl = process.env.REACT_APP_SERVER_URL;
+    
     
     const change=(e)=>{
       const{name,value}=e.target;
@@ -15,7 +15,7 @@ useEffect(() => {
         const fetch = async () => {
             try {
                 console.log(`Fetching task with ID: ${EditTaskId}`);  //debugging
-                const res = await axios.get(`${apiUrl}/api/v1/getTask/${EditTaskId}`, {
+                const res = await axios.get(`http://localhost:1000/api/v1/getTask/${EditTaskId}`, {
                     withCredentials: true
                 });
                 console.log("Fetched Task Data:", res.data);
