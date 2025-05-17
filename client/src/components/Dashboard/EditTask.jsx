@@ -42,7 +42,7 @@ useEffect(() => {
         e.preventDefault();
          console.log("Values being sent to editTask:", Values);
         try {
-            const res = await axios.put(`${import.meta.env.VITE_BACKEND_LINK}/editTask/${id}`, Values, {
+            const res = await axios.put(`${import.meta.env.VITE_BACKEND_LINK}/api/v1/editTask/${id}`, Values, {
 
                 withCredentials: true
             })
@@ -69,7 +69,7 @@ useEffect(() => {
     const deleteTask = async (e, id) => {
         e.preventDefault();
         try {
-            const res = await axios.delete(`http://localhost:1000/api/v1/deleteTask/${id}`, {
+            const res = await axios.delete(`${import.meta.env.VITE_BACKEND_LINK}/api/v1/deleteTask/${id}`, {
 
                 withCredentials: true
             })
