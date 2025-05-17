@@ -23,7 +23,12 @@ app.get("/",(req,res)=>{
 app.use("/api/v1",userApis);
 app.use("/api/v1",authMiddleware); 
 app.use("/api/v1",taskApis);
-
+app.get('/',(req,res)=>{
+    res.send({
+        activeStatus:true,
+        error:false,
+    })
+})
 app.listen(`${process.env.PORT}`,()=>{
     console.log(`server started at PORT=${process.env.PORT}`);
 
