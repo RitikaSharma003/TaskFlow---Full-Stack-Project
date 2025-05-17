@@ -2,13 +2,14 @@ import React from 'react'
 import {IoLogOutOutline} from "react-icons/io5"
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+const apiUrl = process.env.REACT_APP_SERVER_URL;
 
 
 const Header = ({setAddTaskDiv}) => {
 const Navigate=useNavigate();
 const logout=async()=>{
   try{
-const res=await axios.post("http://localhost:1000/api/v1/logout",{},{
+const res=await axios.post(`${apiUrl}/logout`,{},{
   withCredentials:true
 });
 alert(res.data.message);

@@ -10,6 +10,7 @@ import EditTask from '../components/Dashboard/EditTask';
 const Dashboard = () => {
 const [AddTaskDiv,setAddTaskDiv]=useState("hidden");
 const [Tasks,setTasks]=useState();
+const apiUrl = process.env.REACT_APP_SERVER_URL;
 
 const[EditTaskDiv,setEditTaskDiv]=useState("hidden");
 const[EditTaskId,setEditTaskId]=useState();
@@ -17,7 +18,7 @@ const[EditTaskId,setEditTaskId]=useState();
 useEffect(()=>{
 const fetchUserDetails=async()=>{
   try{
-const res=await axios.get("http://localhost:1000/api/v1/userDetails",{
+const res=await axios.get(`${apiUrl}/userDetails`,{
         withCredentials:true,
       });
       console.log(res.data);

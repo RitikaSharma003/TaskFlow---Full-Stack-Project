@@ -2,7 +2,7 @@ import React from 'react'
 import {Link,BrowserRouter as Router, Route, Routes,useNavigate} from "react-router-dom";
 import { useState } from 'react';
 import axios from "axios";
-
+const apiUrl = process.env.REACT_APP_SERVER_URL;
 const Register = () => {
     const navigate=useNavigate();
 
@@ -23,7 +23,7 @@ const register=async(e)=>{
 
     try{ 
 
-const res= await axios.post("http://localhost:1000/api/v1/register",Values);
+const res= await axios.post(`${apiUrl}/register`,Values);
 
 alert(res.data.success);
 navigate("/login");
