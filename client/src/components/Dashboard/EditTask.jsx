@@ -42,7 +42,7 @@ useEffect(() => {
         e.preventDefault();
          console.log("Values being sent to editTask:", Values);
         try {
-            const res = await axios.put(`http://localhost:1000/api/v1/editTask/${id}`, Values, {
+            const res = await axios.put(`${import.meta.env.VITE_BACKEND_LINK}/editTask/${id}`, Values, {
 
                 withCredentials: true
             })
