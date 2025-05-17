@@ -23,7 +23,7 @@ const register=async(e)=>{
 
     try{ 
 
-const res= await axios.post(`${apiUrl}/register`,Values);
+const res= await axios.post(`${apiUrl}/api/v1/register`,Values);
 
 alert(res.data.success);
 navigate("/login");

@@ -13,7 +13,7 @@ const change=(e)=>{
 const addTask = async (e)=>{
   e.preventDefault();
   try{
-const res = await axios.post(`${apiUrl}/addTask`,Values,{
+const res = await axios.post(`${apiUrl}/api/v1/addTask`,Values,{
   
   withCredentials:true
 })

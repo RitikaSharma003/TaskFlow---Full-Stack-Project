@@ -18,7 +18,7 @@ const[EditTaskId,setEditTaskId]=useState();
 useEffect(()=>{
 const fetchUserDetails=async()=>{
   try{
-const res=await axios.get(`${apiUrl}/userDetails`,{
+const res=await axios.get(`${apiUrl}/api/v1/userDetails`,{
         withCredentials:true,
       });
       console.log(res.data);

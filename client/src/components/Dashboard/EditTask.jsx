@@ -15,7 +15,7 @@ useEffect(() => {
         const fetch = async () => {
             try {
                 console.log(`Fetching task with ID: ${EditTaskId}`);  //debugging
-                const res = await axios.get(`${apiUrl}/getTask/${EditTaskId}`, {
+                const res = await axios.get(`${apiUrl}/api/v1/getTask/${EditTaskId}`, {
                     withCredentials: true
                 });
                 console.log("Fetched Task Data:", res.data);

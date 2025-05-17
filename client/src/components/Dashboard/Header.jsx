@@ -9,7 +9,7 @@ const Header = ({setAddTaskDiv}) => {
 const Navigate=useNavigate();
 const logout=async()=>{
   try{
-const res=await axios.post(`${apiUrl}/logout`,{},{
+const res=await axios.post(`${apiUrl}/api/v1/logout`,{},{
   withCredentials:true
 });
 alert(res.data.message);
