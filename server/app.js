@@ -11,7 +11,7 @@ const taskApis=require("./controllers/task");
 const authMiddleware=require("./middleware/authMiddleware")
 app.use(express.json());
 app.use(cors({
-    origin:["FRONTEND_URL","FRONTEND_URLS"],
+    origin:["https://task-flow-full-stack-project-ibgv.vercel.app"],
     credentials:true,
 }));
 app.use(cookieParser());
