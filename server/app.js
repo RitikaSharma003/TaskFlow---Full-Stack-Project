@@ -11,7 +11,7 @@ const taskApis=require("./controllers/task");
 const authMiddleware=require("./middleware/authMiddleware")
 app.use(express.json());
 app.use(cors({
-    origin:["http://localhost:5173","http://localhost:5174"],
+    origin:["http://localhost:5173","http://localhost:5174","https://task-flow-full-stack-project.netlify.app/"],
     credentials:true,
 }));
 app.use(cookieParser());
