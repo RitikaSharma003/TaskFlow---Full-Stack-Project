@@ -23,7 +23,7 @@ const register=async(e)=>{
 
     try{ 
 
-const res= await axios.post("http://localhost:1000/api/v1/register",Values);
+const res= await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/v1/register`,Values);
 
 alert(res.data.success);
 navigate("/login");

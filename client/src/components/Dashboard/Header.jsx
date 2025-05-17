@@ -8,7 +8,7 @@ const Header = ({setAddTaskDiv}) => {
 const Navigate=useNavigate();
 const logout=async()=>{
   try{
-const res=await axios.post("http://localhost:1000/api/v1/logout",{},{
+const res=await axios.post(`${import.meta.env.VITE_BACKEND_LINK}/api/v1/logout`,{},{
   withCredentials:true
 });
 alert(res.data.message);
