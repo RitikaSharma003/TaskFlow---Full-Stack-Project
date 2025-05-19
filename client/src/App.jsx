@@ -4,18 +4,19 @@ import Login from './pages/Login'
 import Register from "./pages/Register"
 import Dashboard from './pages/Dashboard'
 import { useEffect } from 'react'
-const App = () => {
+// const App = () => {
 
-  const navigate=useNavigate();
-  const location = useLocation();
-  useEffect(() => {
-    const userLoggedIn = localStorage.getItem("userLoggedIn");
-    if (userLoggedIn && location.pathname !== "/dashboard") {
-      navigate("/dashboard");
-    } else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register") {
-      navigate("/login");
-    }
-  }, [navigate, location.pathname]);
+//   const navigate=useNavigate();
+//   const location = useLocation();
+//   useEffect(() => {
+//     const userLoggedIn = localStorage.getItem("userLoggedIn");
+//     if (userLoggedIn && location.pathname !== "/dashboard") {
+//       navigate("/dashboard");
+//     } else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register") {
+//       navigate("/login");
+//     }
+//   }, [navigate, location.pathname]);
+
 
 
 
@@ -23,7 +24,7 @@ const App = () => {
 
   
   
-  return (
+   return (
 
     
   <>
