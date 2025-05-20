@@ -40,7 +40,7 @@ const App = () => {
       localStorage.removeItem("userLoggedIn");
       navigate("/login");
     }
-    // If user is NOT logged in and on any other page besides login or register, redirect to login
+    
     else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register" && location.pathname !== "/dashboard") {
       navigate("/login");
     }
