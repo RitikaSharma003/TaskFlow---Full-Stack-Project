@@ -26,7 +26,6 @@ const App = () => {
   useEffect(() => {
     const userLoggedIn = localStorage.getItem("userLoggedIn");
 
-    // If user is NOT logged in and trying to access dashboard, redirect to login
     if (!userLoggedIn && location.pathname === "/dashboard") {
       navigate("/login");
     }
