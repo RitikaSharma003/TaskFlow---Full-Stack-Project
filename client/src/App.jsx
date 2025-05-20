@@ -17,6 +17,8 @@ import { useEffect } from 'react'
 //     }
 //   }, [navigate, location.pathname]);
 
+import React, { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const App = () => {
   const navigate = useNavigate();
@@ -25,27 +27,26 @@ const App = () => {
   useEffect(() => {
     const userLoggedIn = localStorage.getItem("userLoggedIn");
 
-    // If user IS logged in, immediately navigate to dashboard if on login or register
-    if (userLoggedIn && (location.pathname === "/login" || location.pathname === "/register")) {
+    // If user is NOT logged in and trying to access dashboard, redirect to login
+    if (!userLoggedIn && location.pathname === "/dashboard") {
+      navigate("/login");
+    }
+    // If user IS logged in and on login or register page, redirect to dashboard
+    else if (userLoggedIn && (location.pathname === "/login" || location.pathname === "/register")) {
       navigate("/dashboard");
     }
-    // If user IS logged in and on dashboard, log out and go to login
+    // If user IS logged in and on dashboard, log out and redirect to login
     else if (userLoggedIn && location.pathname === "/dashboard") {
       localStorage.removeItem("userLoggedIn");
       navigate("/login");
     }
-    // If user is NOT logged in and trying to access dashboard or other protected pages, go to login
-    else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register") {
+    // If user is NOT logged in and on any other page besides login or register, redirect to login
+    else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register" && location.pathname !== "/dashboard") {
       navigate("/login");
     }
-    // If user is NOT logged in and on dashboard, go to login
-    else if (!userLoggedIn && location.pathname === "/dashboard") {
-      navigate("/login");
-    }
-    // Otherwise, stay on the current page (login or register if not logged in)
+    // Otherwise, allow navigation (e.g., logged-in user on dashboard, or non-logged-in user on login/register)
 
   }, [navigate, location.pathname]);
-  
   
    return (
 
