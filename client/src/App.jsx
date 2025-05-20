@@ -43,7 +43,7 @@ const App = () => {
     else if (!userLoggedIn && location.pathname !== "/login" && location.pathname !== "/register" && location.pathname !== "/dashboard") {
       navigate("/login");
     }
-    // Otherwise, allow navigation (e.g., logged-in user on dashboard, or non-logged-in user on login/register)
+   
 
   }, [navigate, location.pathname]);
   
