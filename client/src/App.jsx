@@ -31,11 +31,11 @@ const App = () => {
     if (!userLoggedIn && location.pathname === "/dashboard") {
       navigate("/login");
     }
-    // If user IS logged in and on login or register page, redirect to dashboard
+    
     else if (userLoggedIn && (location.pathname === "/login" || location.pathname === "/register")) {
       navigate("/dashboard");
     }
-    // If user IS logged in and on dashboard, log out and redirect to login
+    
     else if (userLoggedIn && location.pathname === "/dashboard") {
       localStorage.removeItem("userLoggedIn");
       navigate("/login");
